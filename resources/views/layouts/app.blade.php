@@ -17,12 +17,9 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body class="font-sans bg-gray-background text-gray-900 text-sm">
-<header class="flex items-center justify-between px-8 py-4">
-    <a href="#">
-        <img src="{{ asset('img/logo.svg') }}" alt="logo">
-    </a>
-
-    <div class="flex items-center">
+<header class="flex flex-col md:flex-row items-center justify-between px-8 py-4">
+    <a href="#"><img src="{{ asset('img/logo.svg') }}" alt="logo"></a>
+    <div class="flex items-center mt-2 md:mt-0">
         @if (Route::has('login'))
             <div class="px-6 py-4">
                 @auth
@@ -32,7 +29,7 @@
                         <a href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                                     this.closest('form').submit();">
-                            {{ __('Log Out') }}
+                            {{ __('Log out') }}
                         </a>
                     </form>
                 @else
@@ -51,10 +48,10 @@
     </div>
 </header>
 
-<main class="container mx-auto max-w-custom flex">
-    <div class="w-70 mr-5">
+<main class="container mx-auto max-w-custom flex flex-col md:flex-row">
+    <div class="w-70 mx-auto md:mx-0 md:mr-5">
         <div
-            class="bg-white border-2 border-blue rounded-xl mt-16"
+            class="bg-white md:sticky md:top-8 border-2 border-blue rounded-xl mt-16"
             style="
                           border-image-source: linear-gradient(to bottom, rgba(50, 138, 241, 0.22), rgba(99, 123, 255, 0));
                             border-image-slice: 1;
@@ -91,21 +88,18 @@
                 <div class="flex items-center justify-between space-x-3">
                     <button
                         type="button"
-                        class="flex items-center justify-center w-1/2 h-11 text-xs bg-gray-200 font-semibold rounded-xl
-                         border border-gray-200 hover:border-gray-400 transition duration-150 ease-in px-6 py-3"
+                        class="flex items-center justify-center w-1/2 h-11 text-xs bg-gray-200 font-semibold rounded-xl border border-gray-200 hover:border-gray-400 transition duration-150 ease-in px-6 py-3"
                     >
                         <svg class="text-gray-600 w-4 transform -rotate-45" fill="none" viewBox="0 0 24 24"
                              stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415
-                                   6.585a6 6 0 108.486 8.486L20.5 13"/>
+                                  d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/>
                         </svg>
                         <span class="ml-1">Attach</span>
                     </button>
                     <button
                         type="submit"
-                        class="flex items-center justify-center w-1/2 h-11 text-xs bg-blue text-white font-semibold
-                        rounded-xl border border-blue hover:bg-blue-hover transition duration-150 ease-in px-6 py-3"
+                        class="flex items-center justify-center w-1/2 h-11 text-xs bg-blue text-white font-semibold rounded-xl border border-blue hover:bg-blue-hover transition duration-150 ease-in px-6 py-3"
                     >
                         <span class="ml-1">Submit</span>
                     </button>
@@ -113,35 +107,21 @@
             </form>
         </div>
     </div>
-    <div class="w-175">
-        <nav class="flex items-center justify-between text-xs">
+    <div class="w-full px-2 md:px-0 md:w-175">
+        <nav class="hidden md:flex items-center justify-between text-xs">
             <ul class="flex uppercase font-semibold border-b-4 pb-3 space-x-10">
-                <li>
-                    <a href="#" class="border-b-4 pb-3 border-blue">All Ideas (87)</a>
-                </li>
-                <li>
-                    <a href="#" class="text-gray-400 transition duration-150 ease-in border-b-4 pb-3 hover:border-blue">
-                        Considering (6)
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="text-gray-400 transition duration-150 ease-in border-b-4 pb-3 hover:border-blue">
-                        In Progress (1)
-                    </a>
-                </li>
+                <li><a href="#" class="border-b-4 pb-3 border-blue">All Ideas (87)</a></li>
+                <li><a href="#" class="text-gray-400 transition duration-150 ease-in border-b-4 pb-3 hover:border-blue">Considering
+                        (6)</a></li>
+                <li><a href="#" class="text-gray-400 transition duration-150 ease-in border-b-4 pb-3 hover:border-blue">In
+                        Progress (1)</a></li>
             </ul>
 
             <ul class="flex uppercase font-semibold border-b-4 pb-3 space-x-10">
-                <li>
-                    <a href="#" class="text-gray-400 transition duration-150 ease-in border-b-4 pb-3 hover:border-blue">
-                        Implemented (10)
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="text-gray-400 transition duration-150 ease-in border-b-4 pb-3 hover:border-blue">
-                        Closed (55)
-                    </a>
-                </li>
+                <li><a href="#" class="text-gray-400 transition duration-150 ease-in border-b-4 pb-3 hover:border-blue">Implemented
+                        (10)</a></li>
+                <li><a href="#" class="text-gray-400 transition duration-150 ease-in border-b-4 pb-3 hover:border-blue">Closed
+                        (55)</a></li>
             </ul>
         </nav>
 
