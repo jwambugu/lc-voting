@@ -16,7 +16,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
-<body class="font-sans bg-gray-background text-gray-500 text-sm">
+<body class="font-sans bg-gray-background text-gray-900 text-sm">
 <header class="flex items-center justify-between px-8 py-4">
     <a href="#">
         <img src="{{ asset('img/logo.svg') }}" alt="logo">
@@ -31,7 +31,7 @@
 
                         <a href="{{ route('logout') }}"
                            onclick="event.preventDefault();
-                                                this.closest('form').submit();">
+                                                    this.closest('form').submit();">
                             {{ __('Log Out') }}
                         </a>
                     </form>
@@ -44,7 +44,6 @@
                 @endauth
             </div>
         @endif
-
         <a href="#">
             <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp" alt="avatar"
                  class="w-10 h-10 rounded-full">
@@ -54,41 +53,41 @@
 
 <main class="container mx-auto max-w-custom flex">
     <div class="w-70 mr-5">
-        <div class="bg-white border-2 border-blue rounded-xl mt-16" style="
+        <div
+            class="bg-white border-2 border-blue rounded-xl mt-16"
+            style="
                           border-image-source: linear-gradient(to bottom, rgba(50, 138, 241, 0.22), rgba(99, 123, 255, 0));
                             border-image-slice: 1;
                             background-image: linear-gradient(to bottom, #ffffff, #ffffff), linear-gradient(to bottom, rgba(50, 138, 241, 0.22), rgba(99, 123, 255, 0));
                             background-origin: border-box;
                             background-clip: content-box, border-box;
-                    ">
+                    "
+        >
             <div class="text-center px-6 py-2 pt-6">
                 <h3 class="font-semibold text-base">Add an idea</h3>
                 <p class="text-xs mt-4">Let us know what you would like and we'll take a look over!</p>
             </div>
 
-            <form action="#" method="post" class="space-y-4 px-4 py-6">
+            <form action="#" method="POST" class="space-y-4 px-4 py-6">
                 <div>
                     <input type="text"
                            class="w-full text-sm bg-gray-100 border-none rounded-xl placeholder-gray-900 px-4 py-2"
-                           placeholder="Your idea">
+                           placeholder="Your Idea">
                 </div>
-
                 <div>
                     <select name="category_add" id="category_add"
                             class="w-full bg-gray-100 text-sm rounded-xl border-none px-4 py-2">
-                        <option value="Filter One">Filter One</option>
-                        <option value="Filter Two">Filter Two</option>
-                        <option value="Filter Three">Filter Three</option>
-                        <option value="Filter Four">Filter Four</option>
+                        <option value="Category One">Category One</option>
+                        <option value="Category Two">Category Two</option>
+                        <option value="Category Three">Category Three</option>
+                        <option value="Category Four">Category Four</option>
                     </select>
                 </div>
-
                 <div>
                     <textarea name="idea" id="idea" cols="30" rows="4"
                               class="w-full bg-gray-100 rounded-xl border-none placeholder-gray-900 text-sm px-4 py-2"
                               placeholder="Describe your idea"></textarea>
                 </div>
-
                 <div class="flex items-center justify-between space-x-3">
                     <button
                         type="button"
@@ -103,10 +102,10 @@
                         </svg>
                         <span class="ml-1">Attach</span>
                     </button>
-
                     <button
                         type="submit"
-                        class="flex items-center justify-center w-1/2 h-11 text-xs bg-blue text-white font-semibold rounded-xl border border-blue hover:bg-blue-hover transition duration-150 ease-in px-6 py-3"
+                        class="flex items-center justify-center w-1/2 h-11 text-xs bg-blue text-white font-semibold
+                        rounded-xl border border-blue hover:bg-blue-hover transition duration-150 ease-in px-6 py-3"
                     >
                         <span class="ml-1">Submit</span>
                     </button>
@@ -114,7 +113,6 @@
             </form>
         </div>
     </div>
-
     <div class="w-175">
         <nav class="flex items-center justify-between text-xs">
             <ul class="flex uppercase font-semibold border-b-4 pb-3 space-x-10">
