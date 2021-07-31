@@ -25988,6 +25988,10 @@ select {
   background-clip: content-box, border-box;
 }
 
+[x-cloak] {
+  display: none !important;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
