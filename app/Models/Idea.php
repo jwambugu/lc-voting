@@ -13,6 +13,12 @@ class Idea extends Model
 
     protected $guarded = [];
 
+    const PAGINATION_COUNT = 10;
+
+    /**
+     * Return the user who submitted the idea
+     * @return BelongsTo
+     */
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
