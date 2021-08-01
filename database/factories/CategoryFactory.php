@@ -2,18 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Idea;
-use App\Models\User;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class IdeaFactory extends Factory
+class CategoryFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Idea::class;
+    protected $model = Category::class;
 
     /**
      * Define the model's default state.
@@ -23,10 +22,7 @@ class IdeaFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => ucwords((string)$this->faker->words(4, true)),
-            'description' => $this->faker->paragraph(4),
-            'user_id' => User::factory(),
-            'category_id' => $this->faker->numberBetween(1, 4),
+            'name' => ucwords((string)$this->faker->words(2, true))
         ];
     }
 }

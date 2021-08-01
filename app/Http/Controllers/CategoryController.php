@@ -2,28 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Idea;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class IdeaController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return Application|Factory|View
+     * @return Response
      */
     public function index()
     {
-        $ideas = Idea::with('category', 'user')
-            ->simplePaginate(Idea::PAGINATION_COUNT);
-
-        return view('ideas.index', [
-            'ideas' => $ideas,
-        ]);
+        //
     }
 
     /**
@@ -50,25 +42,21 @@ class IdeaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Idea $idea
-     * @return Application|Factory|View
+     * @param Category $category
+     * @return Response
      */
-    public function show(Idea $idea)
+    public function show(Category $category)
     {
-        $idea = $idea->load('category');
-
-        return \view('ideas.show', [
-            'idea' => $idea
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param Idea $idea
+     * @param Category $category
      * @return Response
      */
-    public function edit(Idea $idea)
+    public function edit(Category $category)
     {
         //
     }
@@ -77,10 +65,10 @@ class IdeaController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param Idea $idea
+     * @param Category $category
      * @return Response
      */
-    public function update(Request $request, Idea $idea)
+    public function update(Request $request, Category $category)
     {
         //
     }
@@ -88,10 +76,10 @@ class IdeaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param Idea $idea
+     * @param Category $category
      * @return Response
      */
-    public function destroy(Idea $idea)
+    public function destroy(Category $category)
     {
         //
     }

@@ -37,4 +37,13 @@ class Idea extends Model
             ]
         ];
     }
+
+    /**
+     * Returns the category for the idea
+     * @return BelongsTo
+     */
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
 }
