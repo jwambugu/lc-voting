@@ -19,6 +19,7 @@ class IdeaController extends Controller
     public function index()
     {
         $ideas = Idea::with('category', 'user', 'status')
+            ->latest('id')
             ->simplePaginate(Idea::PAGINATION_COUNT);
 
         return view('ideas.index', [
