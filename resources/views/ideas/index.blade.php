@@ -99,8 +99,8 @@
                                 class="flex items-center space-x-2 mt-4 md:mt-0"
                             >
                                 <div
-                                    class="bg-gray-200 text-xxs font-bold uppercase leading-none rounded-full text-center w-28 h-7 py-2 px-4">
-                                    Open
+                                    class="{{ $idea->status->classes }} text-xxs font-bold uppercase leading-none rounded-full text-center w-28 h-7 py-2 px-4">
+                                    {{ $idea->status->name }}
                                 </div>
                                 <button
                                     @click="isOpen = !isOpen"
@@ -109,8 +109,9 @@
                                     <svg fill="currentColor" width="24" height="6">
                                         <path
                                             d="M2.97.061A2.969 2.969 0 000 3.031 2.968 2.968 0 002.97 6a2.97 2.97 0 100-5.94zm9.184 0a2.97 2.97 0 100 5.939 2.97 2.97 0 100-5.939zm8.877 0a2.97 2.97 0 10-.003 5.94A2.97 2.97 0 0021.03.06z"
-                                            style="color: rgba(163, 163, 163, .5)">
+                                            style="color: rgba(163, 163, 163, .5)"></path>
                                     </svg>
+
                                     <ul
                                         x-cloak
                                         x-show.transition.origin.top.left="isOpen"

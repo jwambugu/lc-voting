@@ -27,6 +27,7 @@ class IdeaFactory extends Factory
             'description' => $this->faker->paragraph(4),
             'user_id' => User::factory(),
             'category_id' => $this->faker->numberBetween(1, 4),
+            'status_id' => $this->faker->numberBetween(1, 5),
         ];
     }
 }

@@ -46,4 +46,18 @@ class Idea extends Model
     {
         return $this->belongsTo(Category::class, 'category_id');
     }
+
+    /**
+     * Returns the status for the idea
+     * @return BelongsTo
+     */
+    public function status(): BelongsTo
+    {
+        return $this->belongsTo(Status::class, 'status_id');
+    }
+
+    public function getStatusClasses()
+    {
+
+    }
 }

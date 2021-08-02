@@ -2,28 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Idea;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
+use App\Models\Status;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class IdeaController extends Controller
+class StatusController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return Application|Factory|View
+     * @return Response
      */
     public function index()
     {
-        $ideas = Idea::with('category', 'user', 'status')
-            ->simplePaginate(Idea::PAGINATION_COUNT);
-
-        return view('ideas.index', [
-            'ideas' => $ideas,
-        ]);
+        //
     }
 
     /**
@@ -50,25 +42,21 @@ class IdeaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Idea $idea
-     * @return Application|Factory|View
+     * @param Status $status
+     * @return Response
      */
-    public function show(Idea $idea)
+    public function show(Status $status)
     {
-        $idea = $idea->load('category', 'user', 'status');
-
-        return \view('ideas.show', [
-            'idea' => $idea
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param Idea $idea
+     * @param Status $status
      * @return Response
      */
-    public function edit(Idea $idea)
+    public function edit(Status $status)
     {
         //
     }
@@ -77,10 +65,10 @@ class IdeaController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param Idea $idea
+     * @param Status $status
      * @return Response
      */
-    public function update(Request $request, Idea $idea)
+    public function update(Request $request, Status $status)
     {
         //
     }
@@ -88,10 +76,10 @@ class IdeaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param Idea $idea
+     * @param Status $status
      * @return Response
      */
-    public function destroy(Idea $idea)
+    public function destroy(Status $status)
     {
         //
     }
